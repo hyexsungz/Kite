@@ -1,6 +1,6 @@
 # KiteVCS
 
-# KiteVCS is a lightweight version control system written in C.
+KiteVCS is a lightweight version control system written in C.
 It is designed as a minimal Git-like engine for local repository management, diff tracking, hashing, and commit simulation.
 
 FEATURES
@@ -24,13 +24,16 @@ Using Makefile:
 make
 
 Manual build:
+
 '''
 gcc -mconsole -Iinclude -o kite main.c sys/kite_sys.c commands/*.c core/*.c diff/*.c merge/*.c network/*.c hash/*.c hooks/*.c utils/*.c
 '''
+
 =====
 
 USAGE
 =====
+
 '''
 kite init
 Initialize repository
@@ -50,6 +53,7 @@ Compare files
 kite log
 Show commit history
 '''
+
 ======
 
 ARCHITECTURE
