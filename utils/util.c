@@ -4,7 +4,22 @@
 
 #include "../include/utils.h"
 
-int file_read_all(const char *path, char **out_data, size_t *out_size)
+char *util_strdup(const char *s)
+{
+    if (!s)
+        return NULL;
+
+    size_t len = strlen(s);
+
+    char *copy = (char *)malloc(len + 1);
+    if (!copy)
+        return NULL;
+
+    memcpy(copy, s, len + 1);
+    return copy;
+}
+
+int util_read_file(const char *path, char **out_data, size_t *out_size)
 {
     if (!path || !out_data)
         return 1;
@@ -43,7 +58,7 @@ int file_read_all(const char *path, char **out_data, size_t *out_size)
     return 0;
 }
 
-int file_write_all(const char *path, const void *data, size_t size)
+int util_write_file(const char *path, const void *data, size_t size)
 {
     if (!path || (!data && size > 0))
         return 1;
@@ -58,7 +73,7 @@ int file_write_all(const char *path, const void *data, size_t size)
     return (written == size) ? 0 : 1;
 }
 
-int file_exists(const char *path)
+int util_file_exists(const char *path)
 {
     if (!path)
         return 0;
@@ -71,7 +86,7 @@ int file_exists(const char *path)
     return 1;
 }
 
-int file_delete(const char *path)
+int util_file_delete(const char *path)
 {
     if (!path)
         return 1;
