@@ -100,6 +100,8 @@ Early development stage but functional local VCS workflow is working.
 
 ======
 
+Note : Do not forget to run install.bat unfortunately, this is Windows only support from now.
+
 LICENSE
 
 MIT License
