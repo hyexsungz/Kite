@@ -25,16 +25,16 @@ make
 
 Manual build:
 
-'''
+```
 gcc -mconsole -Iinclude -o kite main.c sys/kite_sys.c commands/*.c core/*.c diff/*.c merge/*.c network/*.c hash/*.c hooks/*.c utils/*.c
-'''
+```
 
 =====
 
 USAGE
 =====
 
-'''
+```
 kite init
 Initialize repository
 
@@ -52,7 +52,7 @@ Compare files
 
 kite log
 Show commit history
-'''
+```
 
 ======
 
